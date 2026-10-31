@@ -226,22 +226,6 @@
 
   .about .actions { margin-top: 26px; }
 
-  /* Research */
-  .research { background: var(--surface); border-top: 1px solid var(--line); }
-  .research-intro { max-width: 680px; color: var(--muted); margin: -12px 0 32px; font-size: 17.5px; }
-  .pubs { display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; }
-  .pubs > * { min-width: 0; }
-  .pub-side { display: flex; flex-direction: column; gap: 32px; }
-  .pub-group h3 { font: 600 13px/1.3 var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--accent-text); margin: 0 0 6px; }
-  .pub-list { list-style: none; margin: 0; padding: 0; }
-  .pub-list li { display: grid; grid-template-columns: 48px 1fr; gap: 14px; padding: 14px 0; border-top: 1px solid var(--line); }
-  .pub-list li > div { min-width: 0; }
-  .pub-list .yr { font: 600 14px/1.5 var(--sans); font-variant-numeric: tabular-nums; color: var(--accent-text); }
-  .pub-title { display: block; font: 600 16px/1.45 var(--sans); color: var(--heading); text-decoration: none; overflow-wrap: anywhere; }
-  a.pub-title::after { content: " \2197"; color: var(--accent-text); }
-  a.pub-title:hover { text-decoration: underline; }
-  .pub-src { display: block; margin-top: 4px; font-size: 14px; color: var(--muted); }
-
   /* Call to action */
   .cta { position: relative; padding-block: 0; color: var(--on-brand); overflow: hidden; background: var(--brand-deep); }
   .cta img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -274,7 +258,6 @@
     .cards { grid-template-columns: 1fr 1fr; }
     .focus-grid { grid-template-columns: 1fr 1fr; }
     .about-grid { grid-template-columns: 240px 1fr; gap: 32px; }
-    .pubs { grid-template-columns: 1fr; gap: 32px; }
     footer .cols { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 640px) {
@@ -297,6 +280,8 @@
     .dialogue-banner .over { padding: 28px 22px; }
     .about-grid { grid-template-columns: 1fr; }
     .headshot { max-width: 260px; }
+    .about .actions { flex-direction: column; }
+    .about .actions .btn { justify-content: center; }
     footer .cols { grid-template-columns: 1fr; }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -329,7 +314,6 @@
       <a href="#lens">The WEFE lens</a>
       <a href="#dialogues">Dialogues</a>
       <a href="#about">About</a>
-      <a href="#research">Research</a>
       <a class="btn btn-gold" href="#contact">Work with me</a>
     </nav>
   </div>
@@ -530,121 +514,9 @@
           <span>Mediterranean and North Africa</span>
         </div>
         <div class="actions">
+          <a class="btn btn-line" href="https://www.linkedin.com/in/aymanayadr/" target="_blank" rel="noopener">LinkedIn profile</a>
           <a class="btn btn-line" href="https://www.researchgate.net/profile/Ayman-Ayad-5" target="_blank" rel="noopener">ResearchGate profile</a>
-          <a class="btn btn-line" href="#research">Publications</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="research" class="research" aria-labelledby="research-title">
-    <div class="wrap">
-      <div class="head">
-        <h2 id="research-title">Research and publications</h2>
-        <a href="https://www.researchgate.net/profile/Ayman-Ayad-5" target="_blank" rel="noopener">ResearchGate profile &rarr;</a>
-      </div>
-      <p class="research-intro">Peer-reviewed work on non-revenue water, pipeline network design and integrated water resources management, from my doctoral research in irrigation engineering and hydraulics.</p>
-      <div class="pubs">
-        <div class="pub-group">
-          <h3>Journal articles</h3>
-          <ol class="pub-list">
-            <li>
-              <span class="yr">2021</span>
-              <div>
-                <a class="pub-title" href="https://doi.org/10.1016/j.asej.2021.04.007" target="_blank" rel="noopener">An integrated approach for non-revenue water reduction in water distribution networks based on field activities, optimisation, and GIS applications</a>
-                <span class="pub-src">Ain Shams Engineering Journal 12(4), 3509-3520 &middot; Ayad, Khalifa, El Fawy, Moawad</span>
-              </div>
-            </li>
-            <li>
-              <span class="yr">2021</span>
-              <div>
-                <span class="pub-title">An Assessment of the Integrated Water Resources Management in Egypt</span>
-                <span class="pub-src">Journal of Environmental Treatment Techniques 9(4), 751-768 &middot; Ayad, Khalifa, El Fawy</span>
-              </div>
-            </li>
-            <li>
-              <span class="yr">2021</span>
-              <div>
-                <span class="pub-title">Holistic Assessment of the Egyptian National Land Reclamation Project from the view of IWRM</span>
-                <span class="pub-src">Journal of Environmental Treatment Techniques 9(4), 776-787 &middot; Ayad, Khalifa, El Fawy</span>
-              </div>
-            </li>
-            <li>
-              <span class="yr">2018</span>
-              <div>
-                <a class="pub-title" href="https://doi.org/10.1016/j.aej.2016.10.008" target="_blank" rel="noopener">Integrated approach for the optimal design of pipeline networks</a>
-                <span class="pub-src">Alexandria Engineering Journal 57(1), 87-96 &middot; Ayad, Awad, Yassin</span>
-              </div>
-            </li>
-            <li>
-              <span class="yr">2013</span>
-              <div>
-                <a class="pub-title" href="https://doi.org/10.1016/j.aej.2012.10.007" target="_blank" rel="noopener">Parametric analysis for genetic algorithms handling parameters</a>
-                <span class="pub-src">Alexandria Engineering Journal 52(1), 99-111 &middot; Ayad, Awad, Yassin</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-        <div class="pub-side">
-          <div class="pub-group">
-            <h3>Thesis and book</h3>
-            <ol class="pub-list">
-              <li>
-                <span class="yr">PhD</span>
-                <div>
-                  <span class="pub-title">Economic Based Investment Planning for Integrated Water Resources Management</span>
-                  <span class="pub-src">Doctoral dissertation, Ain Shams University, Cairo</span>
-                </div>
-              </li>
-              <li>
-                <span class="yr">2013</span>
-                <div>
-                  <span class="pub-title">Economical Design of Pipelines Networks</span>
-                  <span class="pub-src">Book &middot; LAP LAMBERT Academic Publishing, Saarbr&uuml;cken</span>
-                </div>
-              </li>
-            </ol>
-          </div>
-          <div class="pub-group">
-            <h3>Conference papers</h3>
-            <ol class="pub-list">
-              <li>
-                <span class="yr">2012</span>
-                <div>
-                  <span class="pub-title">Integrated Approach for Water Distribution Network Design and Calibration</span>
-                  <span class="pub-src">2nd International Conference on Sustainable Water Supply and Sanitation (SWSSC 2012), Cairo</span>
-                </div>
-              </li>
-              <li>
-                <span class="yr">2012</span>
-                <div>
-                  <span class="pub-title">Integrated Approach for Water Distribution Network Design and Calibration</span>
-                  <span class="pub-src">2nd JE-HydroNet Symposium, New Cairo</span>
-                </div>
-              </li>
-              <li>
-                <span class="yr">2012</span>
-                <div>
-                  <span class="pub-title">Integrated Approach for the Optimal Design of Pipeline Networks</span>
-                  <span class="pub-src">5th International Perspective on Water Resources and the Environment, Marrakech</span>
-                </div>
-              </li>
-              <li>
-                <span class="yr">2012</span>
-                <div>
-                  <span class="pub-title">Geographic Information Systems in Water Distribution Networks</span>
-                  <span class="pub-src">5th International Perspective on Water Resources and the Environment, Marrakech</span>
-                </div>
-              </li>
-              <li>
-                <span class="yr">2011</span>
-                <div>
-                  <span class="pub-title">Integrated Approach for Leak Detection in Water Networks</span>
-                  <span class="pub-src">International Conference on Drinking Water Safety, Security and Sustainability, Hangzhou</span>
-                </div>
-              </li>
-            </ol>
-          </div>
+          <a class="btn btn-gold" href="https://aymanayadnew.github.io/wefe-nexus-translator/cv/Ayman-Ayad-CV.pdf" download="Ayman-Ayad-CV.pdf" type="application/pdf">Download CV (PDF)</a>
         </div>
       </div>
     </div>
@@ -657,8 +529,7 @@
       <h2 id="contact-title">Have a project that needs to move one stage closer to finance?</h2>
       <p>Tell me where it stands and what decision comes next. I'll tell you which questions to answer first.</p>
       <div class="actions">
-        <!-- Contact slot: add Ayman's chosen contact address here. -->
-        <a class="btn btn-gold" href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">Message me on LinkedIn</a>
+        <a class="btn btn-gold" href="https://www.linkedin.com/in/aymanayadr/" target="_blank" rel="noopener">Message me on LinkedIn</a>
         <a class="btn btn-line-light" href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">Subscribe to the newsletter</a>
       </div>
     </div>
@@ -680,7 +551,6 @@
       <ul>
         <li><a href="#insights">Latest editions</a></li>
         <li><a href="#lens">The WEFE lens</a></li>
-        <li><a href="#research">Research and publications</a></li>
         <li><a href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">Newsletter on LinkedIn</a></li>
         <li><a href="https://www.researchgate.net/profile/Ayman-Ayad-5" target="_blank" rel="noopener">ResearchGate profile</a></li>
       </ul>
