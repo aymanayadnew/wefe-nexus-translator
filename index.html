@@ -6,13 +6,15 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2218%22%20height%3D%2218%22%20rx%3D%222%22%20fill%3D%22%23157ed1%22%2F%3E%3Crect%20x%3D%2222%22%20width%3D%2218%22%20height%3D%2218%22%20rx%3D%222%22%20fill%3D%22%23f4b942%22%2F%3E%3Crect%20y%3D%2222%22%20width%3D%2218%22%20height%3D%2218%22%20rx%3D%222%22%20fill%3D%22%23f17b59%22%2F%3E%3Crect%20x%3D%2222%22%20y%3D%2222%22%20width%3D%2218%22%20height%3D%2218%22%20rx%3D%222%22%20fill%3D%22%23239b73%22%2F%3E%3C%2Fsvg%3E">
 <title>The WEFE Nexus Translator</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Consulting and advocacy that turns water, energy, food and ecosystem goals into decisions someone can fund.">
+<meta name="description" content="Bridging sectors, unlocking investments: consulting and advocacy that turns water, energy, food and ecosystem goals into decisions someone can fund.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://aymanayadnew.github.io/wefe-nexus-translator/">
+<link rel="alternate" hreflang="en" href="https://aymanayadnew.github.io/wefe-nexus-translator/">
+<link rel="alternate" hreflang="ar" href="https://aymanayadnew.github.io/wefe-nexus-translator/ar/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The WEFE Nexus Translator">
 <meta property="og:title" content="The WEFE Nexus Translator | Ayman Ayad">
-<meta property="og:description" content="Consulting and advocacy that turns water, energy, food and ecosystem goals into decisions someone can fund.">
+<meta property="og:description" content="Bridging sectors, unlocking investments: consulting and advocacy that turns water, energy, food and ecosystem goals into decisions someone can fund.">
 <meta property="og:url" content="https://aymanayadnew.github.io/wefe-nexus-translator/">
 <meta property="og:image" content="https://aymanayadnew.github.io/wefe-nexus-translator/images/share/wefe-nexus-translator-share.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -22,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans+Arabic:wght@600&display=swap" rel="stylesheet">
 <style>
   /* Layout: a news-desk front page. Lead story with its picture, a strip of dates, then ruled sections; royal blue bands carry the brand and gold marks every action. */
   :root {
@@ -53,6 +55,7 @@
     --eco: #239b73;
     --serif: "Fraunces", Georgia, "Times New Roman", serif;
     --sans: "Epilogue", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --arabic: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
     --wrap: 1200px;
     --gutter: 24px;
   }
@@ -106,8 +109,12 @@
 
   /* Top strip */
   .strip { background: var(--brand-deep); color: var(--on-brand-muted); font-size: 13px; }
-  .strip .wrap { display: flex; justify-content: space-between; gap: 16px; padding-top: 8px; padding-bottom: 8px; }
+  .strip .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 7px; padding-bottom: 7px; }
+  .strip-links { display: flex; align-items: center; gap: 18px; flex: none; }
   .strip a { color: var(--gold); text-decoration: none; font-weight: 600; white-space: nowrap; }
+  .strip a:hover { text-decoration: underline; }
+  .lang-switch { border: 1px solid var(--gold); border-radius: 999px; padding: 3px 12px; font-family: var(--arabic); }
+  .strip a.lang-switch:hover { background: var(--gold); color: var(--on-gold); text-decoration: none; }
 
   /* Masthead */
   .masthead { background: var(--brand); color: var(--on-brand); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; }
@@ -133,17 +140,22 @@
   .lead-grid > * { min-width: 0; }
   .lead-media { position: relative; border-radius: 6px; overflow: hidden; aspect-ratio: 3 / 2; max-width: 100%; background: var(--brand-deep); }
   .lead-media img { width: 100%; height: 100%; object-fit: cover; }
-  .lead-media .tag { position: absolute; left: 16px; bottom: 16px; background: var(--gold); color: var(--on-gold); font: 700 12px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; padding: 8px 10px; border-radius: 3px; }
-  .lead h1 { font-size: clamp(32px, 4vw, 50px); margin: 14px 0 18px; color: var(--heading); }
-  .lead p.dek { font-size: 19px; color: var(--muted); margin: 0 0 26px; max-width: 34em; }
+  .lead-media .tag { position: absolute; inset-inline-start: 16px; bottom: 16px; background: var(--gold); color: var(--on-gold); font: 700 12px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; padding: 8px 10px; border-radius: 3px; }
+  .lead h1 { font-size: clamp(34px, 4.2vw, 54px); margin: 12px 0 16px; color: var(--heading); }
+  .lead p.dek { font-size: 18.5px; color: var(--muted); margin: 0 0 20px; max-width: 34em; }
+  .magnet { display: flex; align-items: flex-start; gap: 12px; margin: 0 0 24px; padding: 14px 16px; background: var(--chip-bg); border-inline-start: 4px solid var(--gold); border-radius: 4px; color: var(--ink); text-decoration: none; max-width: 34em; }
+  .magnet:hover { box-shadow: 0 6px 18px var(--shadow); }
+  .magnet .free { flex: none; margin-top: 2px; background: var(--gold); color: var(--on-gold); font: 700 11.5px/1 var(--sans); text-transform: uppercase; letter-spacing: .08em; padding: 5px 7px; border-radius: 3px; }
+  .magnet span:last-child { font-size: 16px; line-height: 1.5; }
+  .magnet b { color: var(--accent-text); white-space: nowrap; }
   .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
   /* Dates strip */
   .fixtures { margin-top: 40px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); }
   .fixtures .wrap { display: grid; grid-template-columns: auto 1fr 1fr 1fr; align-items: stretch; }
-  .fx-label { display: flex; align-items: center; padding: 18px 24px 18px 0; font: 700 13px/1.3 var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--accent-text); border-right: 1px solid var(--line); }
-  .fx { padding: 16px 24px; border-right: 1px solid var(--line); min-width: 0; }
-  .fx:last-child { border-right: 0; }
+  .fx-label { display: flex; align-items: center; padding-block: 18px; padding-inline: 0 24px; font: 700 13px/1.3 var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--accent-text); border-inline-end: 1px solid var(--line); }
+  .fx { padding: 16px 24px; border-inline-end: 1px solid var(--line); min-width: 0; }
+  .fx:last-child { border-inline-end: 0; }
   .fx b { display: block; font-size: 15.5px; }
   .fx span { font-size: 14px; color: var(--muted); }
   .fx em { display: inline-block; margin-top: 6px; font: 600 12px/1 var(--sans); font-style: normal; padding: 5px 8px; border-radius: 3px; background: var(--chip-bg); color: var(--accent-text); }
@@ -154,22 +166,31 @@
   .head h2 { font-size: clamp(28px, 3vw, 38px); color: var(--heading); }
   .head a { font-weight: 600; font-size: 15px; color: var(--accent-text); text-decoration: none; white-space: nowrap; }
   .head a:hover { text-decoration: underline; }
+  .section-intro { max-width: 700px; color: var(--muted); margin: -12px 0 32px; font-size: 17.5px; }
 
-  /* Newsletter cards */
-  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  /* Newsletter */
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; min-width: 0; transition: box-shadow .2s ease, transform .2s ease; }
   .card:hover { box-shadow: 0 10px 30px var(--shadow); transform: translateY(-2px); }
   .card .media { aspect-ratio: 16 / 9; max-width: 100%; background: var(--cover-bg); }
   .card .media img { width: 100%; height: 100%; object-fit: cover; }
-  .card .body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .card .body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
   .meta { font-size: 13px; color: var(--muted); }
   .meta .soon { color: var(--accent-text); font-weight: 600; }
-  .card h3 { font-size: 21px; color: var(--heading); }
-  .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+  .card h3 { font-size: 23px; color: var(--heading); }
+  .card p { margin: 0; color: var(--muted); font-size: 16px; }
   .pill { align-self: flex-start; margin-top: auto; font: 600 11.5px/1 var(--sans); text-transform: uppercase; letter-spacing: .08em; padding: 6px 8px; border-radius: 3px; color: var(--on-brand); }
   .pill.water { background: var(--water); }
   .pill.energy { background: var(--energy); color: var(--on-wefe-light); }
   .pill.eco { background: var(--eco); }
+  .next-up { margin-top: 36px; }
+  .next-up h3 { font: 600 13px/1.3 var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--accent-text); margin: 0 0 14px; }
+  .next-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .next-item { display: grid; grid-template-columns: 168px 1fr; gap: 16px; align-items: center; padding: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; text-decoration: none; min-width: 0; }
+  .next-item:hover { box-shadow: 0 6px 18px var(--shadow); }
+  .next-item img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px; background: var(--cover-bg); }
+  .next-item div { min-width: 0; }
+  .next-item b { display: block; font: 700 17px/1.3 var(--serif); color: var(--heading); margin-top: 4px; }
 
   /* Focus areas */
   .focus { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -186,7 +207,7 @@
   .lens { background: var(--brand); color: var(--on-brand); position: relative; overflow: hidden; }
   .lens .head { border-color: var(--gold); }
   .lens .head h2 { color: var(--on-brand); }
-  .lens .intro { max-width: 640px; color: var(--on-brand-muted); margin: -12px 0 36px; font-size: 18px; }
+  .lens .section-intro { color: var(--on-brand-muted); margin-bottom: 36px; }
   .lens-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; position: relative; }
   .q { padding: 28px 28px 30px; border-radius: 6px; min-height: 170px; color: var(--on-brand); }
   .q svg { width: 30px; height: 30px; margin-bottom: 14px; }
@@ -196,9 +217,24 @@
   .q.energy { background: var(--energy); color: var(--on-wefe-light); }
   .q.food { background: var(--food); color: var(--on-wefe-light); }
   .q.eco { background: var(--eco); }
-  .lens-grid .q.energy, .lens-grid .q.eco { padding-left: 56px; }
+  .lens-grid .q.energy, .lens-grid .q.eco { padding-inline-start: 56px; }
   .hub { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 124px; height: 124px; border-radius: 50%; background: var(--brand-deep); color: var(--on-brand); border: 3px solid var(--gold); display: grid; place-items: center; text-align: center; font: 700 17px/1.25 var(--sans); padding: 16px; }
-  .watermark { position: absolute; right: max(var(--gutter), env(safe-area-inset-right, 0px)); bottom: -0.18em; font: 700 clamp(44px, 6.6vw, 96px)/1 var(--serif); color: rgba(255, 255, 255, .05); white-space: nowrap; pointer-events: none; }
+  .watermark { position: absolute; inset-inline-end: max(var(--gutter), env(safe-area-inset-right, 0px)); bottom: -0.18em; font: 700 clamp(44px, 6.6vw, 96px)/1 var(--serif); color: rgba(255, 255, 255, .05); white-space: nowrap; pointer-events: none; }
+
+  /* Key references */
+  .refs-section { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .refs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px 48px; }
+  .ref-col { display: flex; flex-direction: column; gap: 36px; min-width: 0; }
+  .ref-group { min-width: 0; }
+  .ref-group h3 { font: 600 13px/1.3 var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--accent-text); margin: 0 0 6px; }
+  .ref-list { list-style: none; margin: 0; padding: 0; }
+  .ref-list li { display: grid; grid-template-columns: 1fr auto; gap: 6px 18px; align-items: start; padding: 13px 0; border-top: 1px solid var(--line); }
+  .ref-list li > div { min-width: 0; }
+  .ref-name { display: block; font: 600 16px/1.4 var(--sans); color: var(--heading); }
+  .ref-meta { display: block; margin-top: 3px; font-size: 14px; color: var(--muted); }
+  .ref-link { font: 600 14px/1.4 var(--sans); color: var(--accent-text); text-decoration: none; white-space: nowrap; padding-top: 2px; }
+  .ref-link:hover { text-decoration: underline; }
+  .ref-none { font-size: 13px; color: var(--muted); white-space: nowrap; padding-top: 3px; }
 
   /* Dialogues */
   .dialogue-banner { position: relative; border-radius: 6px; overflow: hidden; aspect-ratio: 3 / 1; max-width: 100%; min-height: 280px; background: var(--brand-deep); }
@@ -223,7 +259,6 @@
   .about p { margin: 0 0 14px; font-size: 17.5px; max-width: 640px; }
   .topics { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
   .topics span { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 7px 13px; font-size: 14px; font-weight: 500; color: var(--accent-text); }
-
   .about .actions { margin-top: 26px; }
 
   /* Call to action */
@@ -252,11 +287,12 @@
   @media (max-width: 980px) {
     .lead-grid { grid-template-columns: 1fr; gap: 24px; }
     .fixtures .wrap { grid-template-columns: 1fr; }
-    .fx-label { border-right: 0; border-bottom: 1px solid var(--line); padding: 14px 0; }
-    .fx { border-right: 0; border-bottom: 1px solid var(--line); padding: 14px 0; }
+    .fx-label { border-inline-end: 0; border-bottom: 1px solid var(--line); padding: 14px 0; }
+    .fx { border-inline-end: 0; border-bottom: 1px solid var(--line); padding: 14px 0; }
     .fx:last-child { border-bottom: 0; }
-    .cards { grid-template-columns: 1fr 1fr; }
+    .next-list { grid-template-columns: 1fr; }
     .focus-grid { grid-template-columns: 1fr 1fr; }
+    .refs { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 240px 1fr; gap: 32px; }
     footer .cols { grid-template-columns: 1fr 1fr; }
   }
@@ -264,17 +300,20 @@
     :root { --gutter: 16px; }
     body { font-size: 16px; }
     section { padding-block: 52px; }
-    .strip .wrap { flex-direction: column; gap: 2px; }
+    .strip .wrap { font-size: 12px; }
+    .strip-links .newsletter-link { display: none; }
     .brand-sub { display: none; }
     .brand-name { font-size: 17px; white-space: normal; }
     .mark { width: 32px; height: 32px; }
     .masthead .wrap { gap: 12px; min-height: 64px; }
     .nav .btn { padding: 9px 12px; font-size: 13.5px; }
     .cards, .focus-grid, .formats { grid-template-columns: 1fr; }
+    .next-item { grid-template-columns: 112px 1fr; gap: 12px; }
     .head { flex-direction: column; align-items: start; gap: 8px; }
     .lens-grid { grid-template-columns: 1fr; }
     .hub { position: static; transform: none; margin: 6px auto 0; order: 5; }
-    .lens-grid .q.energy, .lens-grid .q.eco { padding-left: 28px; }
+    .lens-grid .q.energy, .lens-grid .q.eco { padding-inline-start: 28px; }
+    .ref-list li { grid-template-columns: 1fr; }
     .dialogue-banner { aspect-ratio: auto; min-height: 340px; }
     .dialogue-banner::after { background: rgba(0, 37, 111, .8); }
     .dialogue-banner .over { padding: 28px 22px; }
@@ -295,7 +334,10 @@
 <div class="strip">
   <div class="wrap">
     <span>Personal views, not those of my current employer.</span>
-    <a href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">Read the newsletter on LinkedIn &rarr;</a>
+    <span class="strip-links">
+      <a class="newsletter-link" href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">Newsletter on LinkedIn &rarr;</a>
+      <a class="lang-switch" href="https://aymanayadnew.github.io/wefe-nexus-translator/ar/" hreflang="ar" lang="ar" title="Arabic version">العربية</a>
+    </span>
   </div>
 </div>
 
@@ -311,7 +353,7 @@
     <nav class="nav" aria-label="Main">
       <a href="#insights">Insights</a>
       <a href="#focus">Focus areas</a>
-      <a href="#lens">The WEFE lens</a>
+      <a href="#references">Key references</a>
       <a href="#dialogues">Dialogues</a>
       <a href="#about">About</a>
       <a class="btn btn-gold" href="#contact">Work with me</a>
@@ -328,9 +370,13 @@
         <span class="tag">Water &middot; Energy &middot; Food &middot; Ecosystems</span>
       </div>
       <div>
-        <span class="kicker">General purpose consulting and advocacy</span>
-        <h1>Turning water, energy, food and ecosystem goals into decisions someone can fund.</h1>
-        <p class="dek">I work on water economics, policy dialogue, strategic analysis and programme management. The question is always the same: who decides, who pays, and what moves the project one stage closer to finance?</p>
+        <span class="kicker">The WEFE Nexus Translator &middot; Consulting and advocacy</span>
+        <h1>Bridging sectors. Unlocking investments.</h1>
+        <p class="dek">The WEFE Nexus Translator connects water, energy, food and ecosystems, then translates each project into the terms ministries, lenders and project teams use to decide and fund it.</p>
+        <a class="magnet" href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">
+          <span class="free">Free</span>
+          <span>How a water project moves from idea to financial close, one stage at a time. Free in your inbox every Monday. <b>Subscribe &rarr;</b></span>
+        </a>
         <div class="actions">
           <a class="btn btn-gold" href="#contact">Start a conversation</a>
           <a class="btn btn-line" href="#insights">Read the latest</a>
@@ -363,37 +409,41 @@
   <section id="insights" aria-labelledby="insights-title">
     <div class="wrap">
       <div class="head">
-        <h2 id="insights-title">Latest from the newsletter</h2>
+        <h2 id="insights-title">Featured from the newsletter</h2>
         <a href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">All editions &rarr;</a>
       </div>
       <div class="cards">
-        <a class="card" href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">
+        <a class="card" href="https://www.linkedin.com/pulse/alexandria-mediterranean-city-shows-why-water-now-ayad-phd-pmp-pbiqf/" target="_blank" rel="noopener">
+          <div class="media"><img data-slot="cover-alexandria" src="images/covers/alexandria-water-security.jpg" width="1280" height="720" loading="lazy" alt="Cover: Alexandria and Beheira as one integrated story, with port, industry, farmland and the WEFE investment logic."></div>
+          <div class="body">
+            <div class="meta">Published 15 May 2026</div>
+            <h3>Alexandria: the Mediterranean city that shows why water security is now economic strategy</h3>
+            <p>Alexandria has always been read through its port. This edition reads it through water, and shows why that has become an economic strategy.</p>
+            <span class="pill water">Water security</span>
+          </div>
+        </a>
+        <a class="card" href="https://www.linkedin.com/pulse/from-feasibility-financial-close-translating-wefe-ayad-phd-pmp-exw5f/" target="_blank" rel="noopener">
           <div class="media"><img data-slot="cover-1" src="images/covers/feasibility-to-financial-close.png" width="2400" height="1350" loading="lazy" alt="Cover: From Feasibility to Financial Close, translating the WEFE Nexus for lenders."></div>
           <div class="body">
             <div class="meta">Published 19 October 2026</div>
-            <h3>From Feasibility to Financial Close</h3>
-            <p>Translating the WEFE Nexus for lenders: water to repayment, energy to risk, food to revenue, ecosystems to guarantee.</p>
+            <h3>From Feasibility to Financial Close: Translating the WEFE Nexus for Lenders</h3>
+            <p>Four translations a lender needs: water to repayment, energy to risk, food to revenue, ecosystems to guarantee.</p>
             <span class="pill energy">Infrastructure finance</span>
           </div>
         </a>
-        <a class="card" href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">
-          <div class="media"><img data-slot="cover-2" src="images/covers/pipeline-to-loan-book.png" width="2400" height="1350" loading="lazy" alt="Cover: From Pipeline to Loan Book, what it takes for banks to lend to water."></div>
-          <div class="body">
-            <div class="meta"><span class="soon">Out Monday 2 November</span></div>
-            <h3>From Pipeline to Loan Book: What It Takes for Banks to Lend to Water</h3>
-            <p>Four credit questions every WEFE project has to answer before a bank will lend.</p>
-            <span class="pill water">Water economics</span>
-          </div>
-        </a>
-        <a class="card" href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">
-          <div class="media"><img data-slot="cover-3" src="images/covers/cairo-to-abu-dhabi.png" width="2400" height="1350" loading="lazy" alt="Cover: From Cairo to Abu Dhabi, five lessons from Cairo Water Week 2026."></div>
-          <div class="body">
-            <div class="meta"><span class="soon">Out Monday 9 November</span></div>
-            <h3>From Cairo to Abu Dhabi: Five Lessons from Cairo Water Week 2026</h3>
-            <p>What moved, what stayed hard, and what the region can carry to the UN Water Conference.</p>
-            <span class="pill eco">Policy dialogue</span>
-          </div>
-        </a>
+      </div>
+      <div class="next-up">
+        <h3>Coming next</h3>
+        <div class="next-list">
+          <a class="next-item" href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">
+            <img data-slot="cover-2" src="images/covers/pipeline-to-loan-book.png" width="2400" height="1350" loading="lazy" alt="Cover: From Pipeline to Loan Book.">
+            <div><span class="meta"><span class="soon">Out Monday 2 November</span></span><b>From Pipeline to Loan Book: What It Takes for Banks to Lend to Water</b></div>
+          </a>
+          <a class="next-item" href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">
+            <img data-slot="cover-3" src="images/covers/cairo-to-abu-dhabi.png" width="2400" height="1350" loading="lazy" alt="Cover: From Cairo to Abu Dhabi.">
+            <div><span class="meta"><span class="soon">Out Monday 9 November</span></span><b>From Cairo to Abu Dhabi: Five Lessons from Cairo Water Week 2026</b></div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -438,7 +488,7 @@
       <div class="head">
         <h2 id="lens-title">The WEFE lens</h2>
       </div>
-      <p class="intro">Every project touches all four systems. Before any meeting on financing, I ask one question per system and bring the answers to the decision in the middle.</p>
+      <p class="section-intro">Every project touches all four systems. Before any meeting on financing, I ask one question per system and bring the answers to the decision in the middle.</p>
       <div class="lens-grid">
         <div class="q water">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>
@@ -464,6 +514,54 @@
       </div>
     </div>
     <div class="watermark" aria-hidden="true">The WEFE Nexus Translator</div>
+  </section>
+
+  <section id="references" class="refs-section" aria-labelledby="references-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="references-title">Key references</h2>
+      </div>
+      <p class="section-intro">Selected programmes and investments I have led or managed across water, sanitation and drainage. Each link opens the official page of the financier or government partner in a new tab.</p>
+      <div class="refs">
+        <div class="ref-col">
+        <div class="ref-group">
+          <h3>Wastewater treatment</h3>
+          <ul class="ref-list">
+            <li><div><span class="ref-name">Alexandria West Wastewater Treatment Plant</span><span class="ref-meta">Upgrade and expansion, Alexandria &middot; EIB and EU</span></div><a class="ref-link" href="https://www.eib.org/en/projects/all/20170089" target="_blank" rel="noopener">Official page &#8599;</a></li>
+            <li><div><span class="ref-name">Helwan Wastewater Treatment Plant expansion</span><span class="ref-meta">Greater Cairo &middot; EIB, AFD and EU</span></div><a class="ref-link" href="https://www.eib.org/en/projects/all/20180139" target="_blank" rel="noopener">Official page &#8599;</a></li>
+            <li><div><span class="ref-name">Gabal Asfar Wastewater Treatment Plant, phase III</span><span class="ref-meta">Greater Cairo &middot; AFD and EU</span></div><a class="ref-link" href="https://international-partnerships.ec.europa.eu/policies/global-gateway/expansion-gabal-asfar-wastewater-treatment-plant-egypt-0_en" target="_blank" rel="noopener">Official page &#8599;</a></li>
+            <li><div><span class="ref-name">Fayoum Wastewater Expansion Programme</span><span class="ref-meta">Rural sanitation, Fayoum &middot; EIB, EBRD and EU</span></div><a class="ref-link" href="https://www.eib.org/en/projects/all/20160835" target="_blank" rel="noopener">Official page &#8599;</a></li>
+            <li><div><span class="ref-name">Kafr El Sheikh Wastewater Expansion Programme</span><span class="ref-meta">Rural sanitation, Kafr El Sheikh &middot; EIB, EBRD and EU</span></div><a class="ref-link" href="https://www.eib.org/en/projects/all/20110416" target="_blank" rel="noopener">Official page &#8599;</a></li>
+          </ul>
+        </div>
+        <div class="ref-group">
+          <h3>Drainage and depollution</h3>
+          <ul class="ref-list">
+            <li><div><span class="ref-name">Kitchener Drain Integrated Depollution Programme</span><span class="ref-meta">Gharbia, Kafr El Sheikh and Dakahlia &middot; EBRD, EIB and EU</span></div><a class="ref-link" href="https://www.ebrd.com/home/news-and-events/news/2022/ebrd-eu-and-eib-provide-innovative-financing-to-depollute-kitchener-drain-in-egypt.html" target="_blank" rel="noopener">Official page &#8599;</a></li>
+            <li><div><span class="ref-name">National Drainage Programme, phases III and IV</span><span class="ref-meta">Subsurface drainage for farmland &middot; EU, KfW and partners</span></div><a class="ref-link" href="https://moic.gov.eg/project/123" target="_blank" rel="noopener">Official page &#8599;</a></li>
+          </ul>
+        </div>
+        </div>
+        <div class="ref-col">
+        <div class="ref-group">
+          <h3>Sector reform and technical assistance</h3>
+          <ul class="ref-list">
+            <li><div><span class="ref-name">Water Sector Reform Programme I and II</span><span class="ref-meta">Sector budget support &middot; EU</span></div><a class="ref-link" href="https://moic.gov.eg/en/project/147" target="_blank" rel="noopener">Official page &#8599;</a></li>
+            <li><div><span class="ref-name">Improved Water and Wastewater Services Programme I and II</span><span class="ref-meta">Water utilities in the Delta and Upper Egypt &middot; AFD, EIB, EU and KfW</span></div><a class="ref-link" href="https://www.eib.org/en/projects/all/20100483" target="_blank" rel="noopener">Official page &#8599;</a></li>
+            <li><div><span class="ref-name">EU4Water</span><span class="ref-meta">Water sector cooperation programme &middot; EU</span></div><a class="ref-link" href="https://www.eeas.europa.eu/node/52358_en" target="_blank" rel="noopener">Official page &#8599;</a></li>
+            <li><div><span class="ref-name">EU Water STARS I and II</span><span class="ref-meta">Technical assistance for water sector reform &middot; EU</span></div><span class="ref-none">No public page</span></li>
+          </ul>
+        </div>
+        <div class="ref-group">
+          <h3>Policy and finance</h3>
+          <ul class="ref-list">
+            <li><div><span class="ref-name">Macro-Financial Assistance to Egypt, water pillar</span><span class="ref-meta">Reform-linked EU financing &middot; EU</span></div><a class="ref-link" href="https://enlargement.ec.europa.eu/news/commission-provides-eu1-billion-macro-financial-assistance-egypt-2024-12-20_en" target="_blank" rel="noopener">Official page &#8599;</a></li>
+            <li><div><span class="ref-name">Team Europe Initiative on Integrated Water and Food Security in Egypt</span><span class="ref-meta">Launched at Cairo Water Week 2024 &middot; Team Europe</span></div><a class="ref-link" href="https://www.eeas.europa.eu/delegations/egypt/team-europe-initiative-cairo-water-week-2024_en" target="_blank" rel="noopener">Official page &#8599;</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="dialogues" aria-labelledby="dialogues-title">
@@ -529,7 +627,8 @@
       <h2 id="contact-title">Have a project that needs to move one stage closer to finance?</h2>
       <p>Tell me where it stands and what decision comes next. I'll tell you which questions to answer first.</p>
       <div class="actions">
-        <a class="btn btn-gold" href="https://www.linkedin.com/in/aymanayadr/" target="_blank" rel="noopener">Message me on LinkedIn</a>
+        <!-- Booking button: switch href to the Cal.com booking link (Google Meet, requires confirmation) once it exists. -->
+        <a class="btn btn-gold" href="https://www.linkedin.com/in/aymanayadr/" target="_blank" rel="noopener" data-booking>Request a call</a>
         <a class="btn btn-line-light" href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">Subscribe to the newsletter</a>
       </div>
     </div>
@@ -544,13 +643,13 @@
         <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
         <span class="brand-name">The WEFE Nexus Translator</span>
       </a>
-      <p>Consulting and advocacy on water economics, policy dialogue, strategic analysis and programme management.</p>
+      <p>Bridging sectors, unlocking investments. Consulting and advocacy on water economics, policy dialogue, strategic analysis and programme management.</p>
     </div>
     <div>
       <h4>Read</h4>
       <ul>
-        <li><a href="#insights">Latest editions</a></li>
-        <li><a href="#lens">The WEFE lens</a></li>
+        <li><a href="#insights">Featured editions</a></li>
+        <li><a href="#references">Key references</a></li>
         <li><a href="https://www.linkedin.com/newsletters/the-wefe-nexus-translator-7450080773115801601" target="_blank" rel="noopener">Newsletter on LinkedIn</a></li>
         <li><a href="https://www.researchgate.net/profile/Ayman-Ayad-5" target="_blank" rel="noopener">ResearchGate profile</a></li>
       </ul>
@@ -561,6 +660,7 @@
         <li><a href="#focus">Focus areas</a></li>
         <li><a href="#dialogues">Policy dialogues</a></li>
         <li><a href="#contact">Get in touch</a></li>
+        <li><a href="https://aymanayadnew.github.io/wefe-nexus-translator/ar/" hreflang="ar" lang="ar">النسخة العربية</a></li>
       </ul>
     </div>
   </div>
